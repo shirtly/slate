@@ -1,11 +1,24 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+```json
+{
+  "error": "Not authorized"
+}
+```
 
-The Kittn API uses the following error codes:
+The unofficial list of HTTP status codes that the API is going to respond with:
+
+Code | Status             | Description
+---- | ------             | -----------
+200  | Success            | Success
+400  | Bad Request        | Request is invalid or request is missing an Authorization header
+401  | Unauthorized       | Request is missing an Authorization header or authentication has failed
+403  | Forbidden          | User is not authorised to access resource
+404  | Not Found          | URI is invalid or resource doesn't exist. Or request format is using the wrong method
+422  | Unprocessable Entry| Resource couldn't be created, saved, or deleted
 
 
-Error Code | Meaning
+<!-- Error Code | Meaning
 ---------- | -------
 400 | Bad Request -- Your request sucks
 401 | Unauthorized -- Your API key is wrong
@@ -18,3 +31,4 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+ -->
